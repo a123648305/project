@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_stime" value="name:pdata;datatype:date" />
+	<infoitem key="UD_playlist" value="name:mprice;datatype:int,name:pid;datatype:int,name:pdata;datatype:date,name:pmname;datatype:string,name:ptime;datatype:time,name:mlanguage;datatype:string" />
+</info>

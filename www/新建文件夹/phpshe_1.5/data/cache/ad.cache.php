@@ -1,0 +1,3 @@
+<?php
+$cache=unserialize('a:1:{s:9:"index_jdt";a:2:{i:1;a:7:{s:5:"ad_id";s:1:"1";s:7:"ad_logo";s:43:"data/attachment/2017-05/20170503153149o.jpg";s:6:"ad_url";s:0:"";s:11:"ad_position";s:9:"index_jdt";s:8:"ad_state";s:1:"1";s:8:"ad_order";s:1:"0";s:11:"category_id";s:1:"0";}i:2;a:7:{s:5:"ad_id";s:1:"2";s:7:"ad_logo";s:43:"data/attachment/2017-05/20170503153226h.jpg";s:6:"ad_url";s:0:"";s:11:"ad_position";s:9:"index_jdt";s:8:"ad_state";s:1:"1";s:8:"ad_order";s:1:"0";s:11:"category_id";s:1:"0";}}}');
+?>

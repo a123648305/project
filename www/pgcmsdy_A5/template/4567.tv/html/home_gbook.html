@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>留言本- 欢迎大家报告错误和提出建议</title>
+	<meta name="author" content="qvodcms,movecms,chaijiu" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+	<meta name="Copyright" content="电影网留言本" />
+	<meta name="description" content="留言本" />
+	<meta content="all" name="robots" />
+	<link href="{maccms:path_tpl}css/gbook.css" type="text/css" rel="stylesheet" />
+<link href="{maccms:path_tpl}css/home.css" rel="stylesheet" type="text/css" />
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/jq/jquery.lazyload.js"></script>
+<script src="{maccms:path}js/jq/jquery.autocomplete.js"></script>
+<script src="{maccms:path_tpl}js/home.js"></script>
+<script src="{maccms:path_tpl}js/tpl.js"></script>
+	</head>
+	<body>
+<!-- // Header Start -->
+    <div class="header">
+      <div class="head-bar fn-clear">
+        <div class="logo fn-left"> <a href="{maccms:path}"><img src="{maccms:path_tpl}images/logo.gif" alt="" /></a> </div>
+        <!-- // Logo End -->
+        
+        <div class="gb-logo fn-left"> <a href="{maccms:link_gbook}"><img src="{maccms:path_tpl}images/gb-logo.gif" alt="" /></a> </div>
+        <!-- // Logo End -->
+        
+        <div class="top-bar fn-right"> <a href="{maccms:path}">网站首页</a></div>
+        <!-- // top-bar End -->
+        
+        <div class="search fn-right">
+          <form name="search" id="search"  action="{maccms:link_search_vod}" method="post">
+            <label class="ui-label">搜索影片：</label>
+            <div class="ui-search">
+              <input name="action" type="hidden" value="search">
+              <input type="text" name="wd"  id="wd" class="ui-input" maxlength="20"  />
+            </div>
+            <input type="submit" value="搜 索" class="ui-button" onClick="return check_search()" />
+          </form>
+        </div>
+        <!-- // search End --> 
+      </div>
+      
+      <div style="	width: 960px;border-top: 1px solid #f1e031;border-bottom: 1px solid #f1e031;background: #F5F5DC;margin-top:0px;	border-left: 1px solid #f1e031;border-right: 1px solid #f1e031;clear:both;width:938px;padding:10px;text-align:center;margin:0px auto 0px">尊敬的朋友们！我们对网站进行了重新设计及美化。我们需要您的意见及建议，欢迎大家的批评指正！ </div>
+    </div>
+    <!-- // Header End -->
+	<div style="height:30px;"></div>
+    <div class="wrap">
+      <div class="container fn-clear">
+        <div class="ui-gbook fn-left">
+          <div class="ui-pagea"> </div>       
+
+          
+{maccms:gbook pagesize=10 order=desc by=time}
+<div class="ui-gb-item fn-clear">
+<div class="ui-gb-num"> <span class="gb-number">[gbook:num]</span>条留言 </div><!-- // ui-gb-num End -->          
+ <div class="ui-gb-box ui-gb-cnt">
+<div class="ui-gb-cnt-min">
+<div class="ui-title"> <span>[gbook:time style=Y-m-d H:i:s]</span>
+<h5> <a>[gbook:name]</a> [gbook:ip]</h5>
+</div>
+<div class="ui-text">[gbook:content]</div>
+</div> </div><!-- // ui-gb-cnt End -->
+{if-B:!isN("[gbook:reply]")}	   
+<div class="ui-gb-box ui-gb-reply">
+<div class="ui-gb-cnt-min">
+<div class="ui-title">
+<h5>管理员回复 [gbook:replytime style=Y-m-d H:i:s]</h5>
+</div>
+<div class="ui-text">[gbook:reply]</div>
+</div></div>
+{endif-B}
+<!-- // ui-gb-reply End --></div><!-- // ui-gb-item End -->
+{/maccms:gbook}
+<div class="ui-page">{maccms:pages len=6}</div><!-- // ui-page End --> 
+</div> <!-- // ui-gbook End -->
+        
+        <div class="ui-bar fn-right">
+          <div class="ui-form">
+            <form id="msgleave" name="leavemsg" action="{maccms:path}index.php?m=gbook-save" method="post">
+              <div class="ui-form-title">我要留言</div>
+              <div class="ui-form-item">
+                <label class="ui-label">请输入您的昵称：</label>
+<input type="text"  class="ui-input" id="g_name" name="g_name" value="游客"/>
+</div>
+<div class="ui-form-item">
+                <label class="ui-label">请输入您的留言内容：</label>
+<textarea id="g_content" name="g_content" class="fl"  onKeyup="MAC.Remaining(this,200,'g_remaining')" onfocus="if(this.value=='请在这里发表您的个人看法，最多200个字。'){this.value='';}" onblur="if(this.value==''){this.value='请在这里发表您的个人看法，最多200个字。';};"	rows="6" cols="50" class="ui-input ui-textarea">请在这里发表您的个人看法，最多200个字。</textarea>
+
+              </div>
+              <div class="ui-form-item" style="margin-top:-12px;">
+                <label class="ui-label">请输入验证码：</label>
+{if-A:{maccms:gbookverify}==1}<input type="text" id="g_code" name="g_code" style="width:70px; font-size:18px; color:#FF0000"  class="ui-input"/>&nbsp;&nbsp;<img id="g_code_img" class="cmt_verify"  src="{maccms:path}inc/common/code.php?a=gbook&s=" title="看不清楚? 换一张！" onClick="src='{maccms:path}inc/common/code.php?a=gbook&s='+Math.random()" width="80" height="28"/>{endif-A}
+<input class="ui-button" type="submit" value="发布" >
+</div>
+</form>
+</div><!-- // ui-bar End -->
+          
+          <div class="ui-message">
+            <p>你可以在顶部的搜索框输入你留言时的用户名就可以看到回复拉！</p>
+            <p>百度影音播放不了的情况下，留言时请留下您的QQ，以便我们联系您；</p>
+            <p>版权投诉请附带版权所属证明发至邮箱 ，请不要在此留言，我们收到邮件后会立刻处理；</p>
+          </div>
+          <!-- // ui-message End --> 
+        </div>
+        <!-- // ui-bar End --> 
+      </div>
+      <!-- // container End -->
+      
+      <div class="ui-copyright"> Copyright &copy; 2007-2012 留言本 </div>
+    </div>
+</body>
+</html>

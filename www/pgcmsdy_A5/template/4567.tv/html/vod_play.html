@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>正在播放 [vod:name] [vod:playname]</title>
+<meta name="Keywords" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta name="description" content="[vod:name][vod:playname]免费在线观看,[vod:name]剧情介绍,[vod:name]数据海报" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+{maccms:include}
+<body class="channel4">
+{maccms:head}
+
+<div id="endplay">
+<div class="a950">广告</div>
+<div class="player">
+<div id="play">
+<div class="ptitle"><p class="name">当前位置：[vod:textlink]  [vod:playname]</p></div>
+<div id="player" class="player">[vod:playerinfo][vod:player]</div>
+ </div>
+<div class="playad">
+<div class="player-union">广告</div>
+<div class="player-union">广告</div>
+</div>
+<div class="cr"></div>
+<div class="banner">广告</div>
+</div>
+</div>
+<div id="playmain">
+{maccms:play from=current}
+<div class="mox">
+<div class="title"><span>[play:show] 在线观看</span><p>[[play:tip]]</p></div>
+<div class="play-list">
+{maccms:url order=asc}<a href="[url:link]" target="_blank">[url:name]</a>{/maccms:url}
+</div>
+</div><!--/mox-->
+{/maccms:play}
+<div class="qqgroup">
+<p>本站QQ群[  ]</p>
+<p><em>小贴示：</em>等待添加</p>
+</div>
+<div class="ulike">
+<div class="title"><span>猜你喜欢</span><p>{maccms:menu type=1,2,3,4}<a href="[menu:link]" title="[menu:name]">[menu:name]</a> |{/maccms:menu}</p></div>
+<ul class="img-list clearfix">
+{maccms:vod type=all num=7 order=desc by=time}
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]"/><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]">[vod:name]</a></h5></li>{/maccms:vod}
+</ul>
+</div>
+  
+<div class="comment">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+<!-- UY END -->
+</div>
+  <div class="cr"></div>    
+</div>
+<!--/main-->
+{maccms:foot}
+<div class="back-to-top" id="back-to-top"><a href="javascript:void(0);" target="_self">Back to Top</a></div>
+<script type="text/javascript" src="{maccms:path_tpl}images/IE6Top.js"></script>
+</body>
+</html>

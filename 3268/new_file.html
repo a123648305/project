@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>电影票购买</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">		
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!--<script src="flowplayer.min.js"></script>-->
+	 <!--<link rel="stylesheet" href="skin/functional.css">-->
+   <style>
+   	
+
+	
+
+.Movie{/*margin:0;100px;auto;auto;*/
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top:10px;
+background-color: aliceblue;
+position:relative;
+/*height: 300px;*/
+z-index:1;
+
+	
+}
+.list{position:relative;margin-left:100px;margin-top: 10px;}
+
+.img{ position:inherit;display: block;float: left;margin-top: 10px;margin-left: 50px;
+	
+}
+.play{position: absolute;background-image: url(img/play_black@x2.png); width: 100px;height: 100px;margin-top:70px;margin-left:30px;background-position:center;background-repeat:no-repeat;background-size: contain;}
+.Movieinformation{margin-top: 10px;
+	float: left;margin-left:30px;
+}
+.av{display:none;position:absolute;top:100px;height:450px;margin-left:100px;margin-right:100px;width:80%;z-index: 5; }
+.data{
+	margin-top: 250px;
+}
+.movieshow{margin-top: 10px;
+	
+}
+.title{margin-left: 100px;
+	margin-right: 100px;height: 50px;
+background-color: aliceblue;}
+.title ul {float:right;list-style-type: none; display: block;}
+.title ul li{float:right;font-size: 14px;display: inline;width: 50px;}
+
+.footer{position: relative;top 0;
+	margin-left: 100px;margin-right: 100px;background-color:#808080;
+}
+   </style>
+	</head>
+	<body><div class="title">
+			<ul>
+				<li><a href="">登陆</a></li>　
+				<li><a href="">注册</a></li>
+				<li><a href="">关于</a></li>
+			</ul>
+			
+		</div>
+		
+		<div class="layer" id="back" style="display: none; position:absolute; width:100%; height: 100%; top: 0; left: 0; z-index: 2; background: rgba(255, 255, 255, .6);" disabled="disabled"></div> 
+
+		<div class="Movie">
+		
+			
+			<div class="img"><div class="play"></div><img src="http://p1.meituan.net/movie/ddbaa3f31cdbdfa6cd72721de63545021032555.jpg@170w_235h_1e_1c"  class="img-randed"/></div>
+		<div class="Movieinformation">简介
+		</div>
+			<hr><input type="text" class="text" value="find"/><input id="a1" class="btn btn-success" type="button" value="OK" />
+			</div>
+</div>
+
+         <div class="list">
+			<div class="data">观影时间:<span class="btn btn-default" id="c1">2018-3-8</span>
+				<span class="btn btn-default" id="c2">2018-3-9</span>
+				<span class="btn btn-outline-secondary">SHOW</span>
+			</div>
+			<div class="movieshow">
+				<table class="table">
+					<thead>
+						<td width="150px" align="center">电影名称</td>
+						<td width="100px" align="center">类型</td>
+						<td align="center">时间</td>
+						<td width="100px" align="center">放映厅</td>
+						<td width="80px" align="center">价格</td>
+						<td width="100px" align="center">操作</td>
+					</thead>
+					<tbody>
+					<tr class="active"><td width="150px" align="center">捉妖记2</td>
+						<td align="center">神话</td>
+						<td class="showdata">2018年3月8日11:13:38</td>
+						<td align="center">1号厅</td>
+						<td align="center">￥35</td>
+						<td align="center"><a id="b3" href="">购买</a></td></tr>
+				<tr><td class="success" width="150px" align="center">捉妖记2</td>
+						<td align="center">神话</td>
+						<td class="showdata">2018年3月8日11:13:38</td>
+						<td align="center">2号厅</td>
+						<td align="center">￥35</td>
+						<td align="center"><a href="">购买</a></td></tr>
+				<tr><td width="150px" align="center">捉妖记2</td>
+						<td align="center">神话</td>
+						<td class="showdata">2018年3月8日11:13:38</td>
+						<td align="center">3号厅</td>
+						<td align="center">￥35</td>
+						<td align="center"><a  href="2.php?id=2">购买</a></td></tr></tbody></table>
+			</div>
+		</div>
+		<div class="av">
+		<div class="flowplayer" data-swf="flowplayer.swf" data-ratio="0.4167">
+      <video>
+        
+         <source type="video/mp4" src="">
+      </video>
+   </div>
+  </div>
+				
+				
+<!--footer-->
+<div class="footer">
+	<h1 align="center"><small>友情链接 : 美团网  美团下载</small></h1>
+<p>©2018 猫眼电影 maoyan.com 京ICP证160733号 京ICP备16022489号-1 京公网安备 11010502030881号 网络文化经营许可证 电子公告服务规则
+北京猫眼文化传媒有限公司</p>
+
+</div>
+	<script type="text/javascript">
+		//$("#b3").click(function(){alert($("#b3").parents("tr").text());})
+		//$(".btn-default").click(function(){$data = $(this).text().trim();$(".showdata").html($data); })
+		//$(".btn-outline-secondary").click(function(){
+			
+		//$(this).text($("#b3").parents("tr").text());		
+		$("#a1").click(function(){
+			var txt=$(".text").val();
+      if($.trim(txt)!=""){
+ 
+        $("table tr:not('#theader')").hide().filter(":contains('"+txt+"')").show().css("background","red");
+      }else{
+        $("table tr:not('#theader')").css("background","#fff").show();
+		}});
+	</script>
+	
+	<script>
+$(function(){
+    $("#c1").click(function() {
+    	$("tbody").html("");
+        //$("#test:not(:first)").html("");
+        //$("#test tbody").html("");
+        $.post("playlist.json",function(data){
+        	//var list =data.court;
+        	//$.each(data, function(index,value) {
+        		//console.log(value.name);
+        		for(var i=0;i<data.length;i++)
+        		
+        		{
+        		var aa ="<tr><td width='150px' align='center'>"+data[i].mprice+"</td>"
+						+"<td align='center'>"+data[i].pid+"</td>"
+						+"<td class='showdata'>"+data[i].ptime+"</td>"
+						+"<td align='center'>"+data[i].mlanguage+"</td>"
+						+"<td align='center'><a>购买</a></td></tr>";	
+        			
+        			
+        		var a="<tr><td>"+data[i].mprice+"<td>"+data[i].pid+"</td><td>"+data[i].ptime+"</td></tr>";
+        		$("tbody").append(aa);}
+        		
+        		
+        	});});
+        	
+        	
+     $("#c2").click(function() {
+        //$("#test:not(:first)").html("");
+        //$("#test tbody").html("");
+        $.get("/findmovie/ab.json",function(data){
+        	var list =data.court;
+        	//$.each(data, function(index,value) {
+        		//console.log(value.name);
+        		$("tbody").html("");
+        		for(var i=0;i<list.length;i++)
+        		
+        		{var a="<tr><td>"+list[i].name+"<td>"+list[i].nb+"</td><td></td></tr>";
+        		$("tbody").append(a);}
+        		
+        		
+        	});    	
+
+        
+    });
+    
+  
+   	$(".play").click(function(e){
+   		e.stopPropagation();
+   		$("#back").css("display","block");
+   		
+   		$(".av").css("display","block")});
+   		
+   	$("#back").bind("click", function(e) {   // 相当于点击空白消失  
+                $('#back').css("display", "none");  
+                $(".av").css("display", "none");  
+            });  	
+   
+});</script>
+	
+	
+	</body>	
+</html>

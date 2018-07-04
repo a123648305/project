@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="/3248/css/jquery-3.3.1.min.js"></script>
+<link href="/3248/css/bootstrap.min.css"   rel="stylesheet"/>
+
+</head>
+
+<body>
+<button class="btn btn-success" onclick="showlist()">点击</button>
+<table class="table"></table>
+
+
+
+
+
+
+
+
+<script>
+function showlist(){
+
+var date;//获取日期
+var mid;//电影ID
+$.post("palylist.php",function(data){
+alert(data.pid);
+
+
+
+},"json");
+
+
+
+}</script>
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{maccms:name}</title>
+<meta name="keywords" content="{maccms:keywords}" />
+<meta name="description" content="{maccms:description}" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+
+<div id="main">
+    <div class="channel-filter"><i></i>
+    <a class="prev" href="javascript:void(0)"></a>
+	<a class="next" href="javascript:void(0)"></a>
+    	<ul>
+<li class="dis">
+<b>热搜电影</b>
+<div>
+{maccms:vod num=6 type=1 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>黄金剧场</b>
+<div>
+{maccms:vod num=6 type=2 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>人气综艺</b><div>
+{maccms:vod num=6 type=3 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>热播动漫</b>
+<div>
+{maccms:vod num=6 type=4 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>热搜电影</b><div>
+{maccms:vod num=6 type=1 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>黄金剧场</b><div>
+{maccms:vod num=6 type=2 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>人气综艺</b><div>
+{maccms:vod num=6 type=3 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>热播动漫</b><div>
+{maccms:vod num=6 type=4 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+</ul>
+</div>
+<script>jQuery(".channel-filter").slide({ mainCell:"ul", effect:"leftLoop", vis:4, scroll:2,  autoPage:true});</script>
+<div class="cr"></div>
+  <!--/channel-filter-->
+<div class="box">
+<div class="content">
+<div class="title"><span><b>热门电影</b> 全部<i>{maccms:menu type=1}[menu:count]{/maccms:menu}</i>部>></span><dl>
+			<dd><a href="javascript:void(0)">推荐</a></dd>
+{maccms:menu type=5,6,7,8,9,10}<dd><a href="[menu:link]" title="[menu:name]" target="_blank">[menu:name]</a></dd>{/maccms:menu}
+		</dl></div>
+        <div class="bd clearfix">
+        	<ul class="img-list dis clearfix">
+{maccms:vod num=10 type=1 by=time order=desc}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>
+{maccms:matrix type=5,6,7,8,9,10 table=vod}            
+<ul class="img-list clearfix">
+{maccms:vod num=10 type=[matrix:id] by=time order=desc}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>
+{/maccms:matrix}
+</div>
+</div>
+
+<div class="side">
+<div class="shot">
+<dl><dd class="on"><a href="javascript:void(0)">最新</a></dd><dd><a href="javascript:void(0)">大陆</a></dd><dd><a href="javascript:void(0)">香港</a></dd><dd><a href="javascript:void(0)">美国</a></dd><dd><a href="javascript:void(0)">韩国</a></dd></dl>
+<p class="dyshot"><i>名称</i><span>浏览数</span></p>
+<div class="bd">                	
+<ul class="dis">
+{maccms:vod num=10 by=weekhits type=1 order=desc}
+<li><span>[vod:hits]</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+</ul>
+<ul>
+{maccms:vod num=10 by=weekhits type=1 order=desc area=大陆}
+<li><span>[vod:hits]</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+</ul>
+<ul>
+{maccms:vod num=10 by=weekhits type=1 order=desc area=香港}
+<li><span>[vod:hits]</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+</ul>
+<ul>
+{maccms:vod num=10 by=weekhits type=1 order=desc area=美国}
+<li><span>[vod:hits]</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+</ul>
+<ul>
+{maccms:vod num=10 by=weekhits type=1 order=desc area=韩国}
+<li><span>[vod:hits]</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+</ul>
+</div>
+</div><!--/shot-->
+            <div class="scate">
+            	<dl><dd><a href="javascript:void(0);">按类型</a></dd><dd><a href="javascript:void(0);">按地区</a></dd><dd><a href="javascript:void(0);">按年代</a></dd><dd><a href="javascript:void(0);">按语言</a></dd></dl>
+<ul>
+<li>{maccms:menu parent=1}<p><a href="[menu:link]" target="_blank">[menu:name]</a></p>{/maccms:menu}</li>
+<li>{maccms:area type=1 order=asc}<p><a href="[area:link]" target="_blank">[area:name]</a></p>{/maccms:area}</li>
+<li>{maccms:year type=1 start=1998 end=2014 order=desc}<p><a href="[year:link]" target="_blank">[year:name]</a></p>{/maccms:year}</li>
+<li>{maccms:lang type=1}<p><a href="[lang:link]" target="_blank">[lang:name]</a></p>{/maccms:lang}</li>
+</ul>
+</div>
+</div>
+<div class="cr"></div>
+</div><!--/box-->
+<div class="trailers">
+<div class="title"><span><b>新片预告</b> 全部<i></i>部>></span><a class="next" href="javascript:void(0)">刷新换一批</a></div>
+<ul>
+{maccms:vod num=14 type=all level=all order=desc}				
+<li><a href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name len=8]</a></h5><p>[vod:typename]</p></li>{/maccms:vod}		
+</ul>
+<div class="cr"></div>
+   </div>
+ 
+    <div class="box">
+        <div class="content">
+        <div class="title"><span><b>电视剧</b> 全部<i>{maccms:menu type=2}[menu:count]{/maccms:menu}</i>部>></span><dl><dd><a href="javascript:void(0);">推荐</a></dd>
+{maccms:menu type=12,13,14,15}<dd><a href="[menu:link]" title="[menu:name]" target="_blank">[menu:name]</a></dd>{/maccms:menu}
+		</dl></div>
+        <div class="bd clearfix">
+        	<ul class="img-list clearfix">
+{maccms:vod num=10 type=2 by=time order=desc}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>
+{maccms:matrix type=12,13,14,15 table=vod}            
+<ul class="img-list clearfix">
+{maccms:vod num=10 type=[matrix:id] by=time order=desc}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>
+{/maccms:matrix}
+	</div>
+ 
+        </div>
+        <div class="side">
+        	<div class="shot">
+            	<dl><dd class="on"><a href="javascript:void(0)">最新</a></dd><dd><a href="javascript:void(0)">大陆</a></dd><dd><a href="javascript:void(0)">香港</a></dd><dd><a href="javascript:void(0)">美国</a></dd><dd><a href="javascript:void(0)">韩国</a></dd></dl>
+                <p class="dyshot"><i>名称</i><span>备注</span></p>
+                <div class="bd">                	
+                	<ul>
+{maccms:vod num=10 by=weekhits type=2 order=desc}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=2 order=desc area=大陆}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=2 order=desc area=香港}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}	
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=2 order=desc area=美国}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=2 order=desc area=韩国}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                </div>
+                
+            </div>
+            <!--/shot-->
+            <div class="scate">
+            	<dl><dd><a href="javascript:void(0)">按类型</a></dd><dd><a href="javascript:void(0)">按地区</a></dd><dd><a href="javascript:void(0)">按年代</a></dd><dd><a href="javascript:void(0)">按语言</a></dd></dl>
+                <ul>
+<li>{maccms:menu parent=2}<p><a href="[menu:link]" target="_blank">[menu:name]</a></p>{/maccms:menu}</li>
+<li>{maccms:area type=2 order=asc}<p><a href="[area:link]" target="_blank">[area:name]</a></p>{/maccms:area}</li>
+<li>{maccms:year type=2 start=1998 end=2014 order=desc}<p><a href="[year:link]" target="_blank">[year:name]</a></p>{/maccms:year}</li>
+<li>{maccms:lang type=2}<p><a href="[lang:link]" target="_blank">[lang:name]</a></p>{/maccms:lang}</li>
+                </ul>
+            	
+            </div>
+           
+        </div>
+        <div class="cr"></div>
+    </div>
+    <!--/box-->
+    
+    <div class="box">
+        <div class="content">
+        <div class="title"><span><b>综艺</b> 全部<i>{maccms:menu type=3}[menu:count]{/maccms:menu}</i>部>></span><dl><dd><a href="javascript:void(0)">推荐</a></dd><dd><a href="javascript:void(0)">最新</a></dd></dl></div>
+        <div class="bd clearfix">
+        	<ul class="img-list clearfix">
+{maccms:vod num=10 type=3 by=time order=desc}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>          
+<ul class="img-list clearfix">
+{maccms:vod num=10 type=3 by=time order=desc start=11}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>
+</div>
+</div>
+        <div class="side">
+        	<div class="shot">
+            	<dl><dd class="on"><a href="javascript:void(0)">最热</a></dd><dd><a href="javascript:void(0)">大陆</a></dd><dd><a href="javascript:void(0)">港台</a></dd><dd><a href="javascript:void(0)">欧美</a></dd><dd><a href="javascript:void(0)">日韩</a></dd></dl>
+                <p class="dyshot"><i>名称</i><span>备注</span></p>
+                <div class="bd">                	
+                	<ul>
+{maccms:vod num=10 by=weekhits type=3 order=desc}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=3 order=desc area=大陆}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=3 order=desc area=香港}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}	
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=3 order=desc area=美国}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=3 order=desc area=日本}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+</ul>
+</div> </div><!--/shot-->
+<div class="scate">
+<dl><dd><a href="javascript:void(0)">按类型</a></dd><dd><a href="javascript:void(0)">按地区</a></dd><dd><a href="javascript:void(0)">按年代</a></dd><dd><a href="javascript:void(0)">按语言</a></dd></dl>
+<ul>
+<li>{maccms:menu parent=3}<p><a href="[menu:link]" target="_blank">[menu:name]</a></p>{/maccms:menu}</li>
+<li>{maccms:area type=3 order=asc}<p><a href="[area:link]" target="_blank">[area:name]</a></p>{/maccms:area}</li>
+<li>{maccms:year type=3 start=1998 end=2014 order=desc}<p><a href="[year:link]" target="_blank">[year:name]</a></p>{/maccms:year}</li>
+<li>{maccms:lang type=3}<p><a href="[lang:link]" target="_blank">[lang:name]</a></p>{/maccms:lang}</li>
+</ul>
+</div>
+</div>
+<div class="cr"></div>
+</div><!--/box-->
+<div class="box">
+<div class="content">
+<div class="title"><span><b>动漫</b> 全部<i>{maccms:menu type=4}[menu:count]{/maccms:menu}</i>部>></span><dl><dd><a href="javascript:void(0)">推荐</a></dd><dd><a href="javascript:void(0)">最新</a></dd></dl></div>
+<div class="bd clearfix">
+<ul class="img-list clearfix">
+{maccms:vod num=10 type=4 by=time order=desc}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>
+<ul class="img-list clearfix">
+{maccms:vod num=10 type=4 by=time order=desc start=11}				
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></h5><p>[vod:starring]</p></li>{/maccms:vod}
+</ul>
+</div></div>
+<div class="side">
+<div class="shot">
+<dl><dd class="on"><a href="javascript:void(0)">最热</a></dd><dd><a href="javascript:void(0)">日本</a></dd><dd><a href="javascript:void(0)">大陆</a></dd><dd><a href="javascript:void(0)">欧美</a></dd><dd><a href="javascript:void(0)">韩国</a></dd></dl>
+                <p class="dyshot"><i>名称</i><span>备注</span></p>
+                <div class="bd">                	
+                	<ul>
+{maccms:vod num=10 by=weekhits type=4 order=desc}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=4 order=desc area=日本}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=4 order=desc area=大陆}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}	
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=4 order=desc area=美国}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+                    <ul>
+{maccms:vod num=10 by=weekhits type=4 order=desc area=韩国}
+<li><span>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</span><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name len=8]</a></li>{/maccms:vod}
+                  </ul>
+
+                </div>
+                
+            </div>
+            <!--/shot-->
+            <div class="scate">
+            	<dl><dd><a href="javascript:void(0)">按类型</a></dd><dd><a href="javascript:void(0)">按地区</a></dd><dd><a href="javascript:void(0)">按年代</a></dd><dd><a href="javascript:void(0)">按语言</a></dd></dl>
+                <ul>
+<li>{maccms:menu parent=4}<p><a href="[menu:link]" target="_blank">[menu:name]</a></p>{/maccms:menu}</li>
+<li>{maccms:area type=4 order=asc}<p><a href="[area:link]" target="_blank">[area:name]</a></p>{/maccms:area}</li>
+<li>{maccms:year type=4 start=1998 end=2014 order=desc}<p><a href="[year:link]" target="_blank">[year:name]</a></p>{/maccms:year}</li>
+<li>{maccms:lang type=4}<p><a href="[lang:link]" target="_blank">[lang:name]</a></p>{/maccms:lang}</li>
+                </ul>
+</div>
+</div>
+<div class="cr"></div>
+</div><!--/box-->
+<div class="link"><span>友情链接：</span>
+{maccms:link type=font}<a href="[link:link]" target="_blank" title="[link:name]">[link:name]</a>{/maccms:link}
+</div>
+</div>
+<!--版权信息-->
+{maccms:foot}
+<div class="back-to-top" id="back-to-top"><a href="javascript:void(0);" target="_self">Back to Top</a></div>
+<script type="text/javascript" src="{maccms:path_tpl}images/IE6Top.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/index.js"></script>
+</body>
+</html>

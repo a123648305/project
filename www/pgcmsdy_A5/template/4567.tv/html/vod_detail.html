@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>《[vod:name]》百度影音电影-[vod:remarks]下载-[vod:from]在线观看 - [vod:typename] - {maccms:name}</title>
+<meta name="keywords" content="《[vod:name]》高清下载,《[vod:name]》在线观看,《[vod:name]》百度影音" />
+<meta name="description" content="[vod:name]剧情:[vod:contenttext len=60]" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+{maccms:include}
+<script src="http://pstatic.xunlei.com/js/webThunderDetect.js"></script><script src="http://pstatic.xunlei.com/js/base64.js"></script>
+[vod:history]
+</head>
+<body class="channel4">
+{maccms:head}
+<div id="main">
+	<div class="banner">广告</div>
+	<div class="location">当前位置: [vod:textlink]</div>
+    <div class="endpage clearfix">
+    	<div class="l">
+        	<div class="pic"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]"  class="imgpic"/><p><a href="#pycon">立即播放</a></p></div>
+        <div class="info">
+        <h1>[vod:name]</h1>
+        <div class="share">
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</div>
+       	<ul>
+ 			<li>上映年代：[vod:yearlink]&nbsp;&nbsp;状态：[vod:remarks]</li>
+            <li>类型：<a target="_blank" href="[vod:typelink]">[vod:typename]</a> [vod:typeexpandlink]</li>
+			<li>导演：[vod:directedlink]</li>
+			<li>主演：[vod:starringlink]</li>
+			<li>语言：[vod:langlink]&nbsp;&nbsp;地区：[vod:arealink]</li>
+ 			<li>剧情：<a href="#desc">详细剧情</a> &nbsp;&nbsp;更新日期：[vod:addtime]</li>
+		</ul>
+<!--<div class="textdesc"></div>-->
+[vod:scoremark2]
+<div class="a468">广告</div>
+</div>
+<div class="updatetps clearfix">更新小提示：</div> 
+</div>
+<div class="infoad">
+广告
+
+<div class="skydrive">
+<a href="javascript:;" class="wp">网盘下载</a>
+<ul><li class=wbaidu></li></ul>
+<p><span>友情提示：0</span>欢迎大家使用网盘连接下载！</p>
+</div>
+</div>
+       <div class="cr"></div>
+        <div class="ulike pulike">
+  		<div class="title"><span>猜你喜欢</span></div>
+        <ul class="img-list clearfix">
+{maccms:vod type=current num=7 order=desc by=time}
+<li><a class="play-img" href="[vod:link]" title="[vod:name]"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]"/><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]">[vod:name]</a></h5></li>{/maccms:vod}
+</ul>
+</div>
+<a id="pycon"></a>
+	
+{maccms:play}
+<div class="mox">
+<div class="title"><span>[play:show] 在线观看</span><p>[[play:tip]]</p></div>
+<div class="play-list">
+{maccms:url order=asc}<a href="[url:link]" target="_blank">[url:name]</a>{/maccms:url}
+</div>
+</div><!--/mox-->
+{/maccms:play}
+
+{maccms:down}
+<div class="mox">
+<div class="title"><span>[down:show] 下载</span><p>[[down:tip]]</p></div>
+<div class="play-list">
+<ul>
+{maccms:url order=asc}<script language="javascript">var thunder_url = "[url:path]";var thunder_pid = "129287";var restitle = ""; document.write('<a href="#" thunderHref="' + ThunderEncode(thunder_url) + '" thunderPid="' + thunder_pid + '" thunderResTitle="' + restitle + '" onClick="return OnDownloadClick_Simple(this,2,4)" oncontextmenu="ThunderNetwork_SetHref(this)">[url:name]</a> '); </script>{/maccms:url}
+</ul>
+</div>
+</div><!--/mox-->
+{/maccms:down}
+	
+<a id="desc"></a>
+<div class="mox">
+<div class="title"><span>《[vod:name]》剧情介绍</span></div>
+<div class="endtext">
+[vod:content]
+</div>
+</div><!--/mox-->
+</div></div>
+<!--/main-->
+<!--版权信息-->
+{maccms:foot}
+<div class="back-to-top" id="back-to-top"><a href="javascript:void(0);" target="_self">Back to Top</a></div>
+<script type="text/javascript" src="{maccms:path_tpl}images/IE6Top.js"></script>
+</body>
+</html>

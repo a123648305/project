@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>好看的{page:name}-最新{page:name}-经典{page:name}-{page:name}电影推荐-第{page:now}页-{maccms:name}</title>
+<meta name="keywords" content="{page:key}" />
+<meta name="description" content="{page:des}" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+{maccms:include}
+</head>
+<body class="channel15">
+{maccms:head}
+
+<div id="main">
+    <div class="channel-filter"><i></i>
+    <a class="prev" href="javascript:void(0)"></a>
+	<a class="next" href="javascript:void(0)"></a>
+    	<ul>
+<li class="dis">
+<b>热搜电影</b>
+<div>
+{maccms:vod num=6 type=1 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>黄金剧场</b>
+<div>
+{maccms:vod num=6 type=2 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>人气综艺</b><div>
+{maccms:vod num=6 type=3 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>热播动漫</b>
+<div>
+{maccms:vod num=6 type=4 by=dayhits order=desc}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>热搜电影</b><div>
+{maccms:vod num=6 type=1 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>黄金剧场</b><div>
+{maccms:vod num=6 type=2 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>人气综艺</b><div>
+{maccms:vod num=6 type=3 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+<li><b>热播动漫</b><div>
+{maccms:vod num=6 type=4 by=dayhits order=desc start=7}<p><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name]</a></p>{/maccms:vod}
+</div></li>
+</ul>
+</div>
+<script>jQuery(".channel-filter").slide({ mainCell:"ul", effect:"leftLoop", vis:4, scroll:2,  autoPage:true});</script>
+<div class="trailers">
+   		<div class="title"><span><b>新片预告</b>>></span><a class="next" href="javascript:void(0)">刷新换一批</a></div>
+        <ul>
+{maccms:vod num=14 type=all level=all order=desc}				
+<li><a href="[vod:link]" title="[vod:name]"  target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /></a><h5><a href="[vod:link]" title="[vod:name]"  target="_blank">[vod:name len=8]</a></h5><p>[vod:typename]</p></li>{/maccms:vod}			
+</ul>
+<div class="cr"></div>
+</div>
+
+{maccms:matrix type=12,13,14,15 table=vod}
+<div class="box channel">
+<div class="title"><span><b>[matrix:name]</b> 全部<i>{maccms:menu type=[matrix:id]}[menu:count]{/maccms:menu}</i>部>></span><dl><dd></dd><dd></dd><dd></dd></dl></div>
+<a class="prev" href="javascript:void(0)"></a><a class="next" href="javascript:void(0)"></a>
+<div class="bd">
+<ul class="img-list dis clearfix">
+{maccms:vod num=18 type=[matrix:id] order=desc by=time}
+<li><a class="play-img" href="[vod:link]" title="[vod:name]" target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em><s>[vod:score]</s></a><h5><a href="[vod:link]" title="[vod:name]" target="_blank">[vod:name]</a></h5><p>[vod:starringlink]</p><p class="star">评分：<em>8.0</em></p></li>{/maccms:vod}
+</ul>
+</div></div><!--/channel-->
+{/maccms:matrix}
+ 
+</div>
+ <!--版权信息-->
+<div class="back-to-top" id="back-to-top"><a href="javascript:void(0);" target="_self">Back to Top</a></div>
+<script type="text/javascript" src="{maccms:path_tpl}images/IE6Top.js"></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/index.js"></script>
+</body>
+</html>

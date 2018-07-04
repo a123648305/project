@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{page:key}-{maccms:name}</title>
+<meta name="keywords" content="{page:key},{maccms:name}" />
+<meta name="description" content="{page:key},{maccms:name}" />
+{maccms:include}
+</head>
+<body>
+{maccms:head}
+
+ 
+<div id="main">
+    <!-- 筛选开始 -->
+      <div class="filter">
+        <div class="title"><b>当前位置：<a href="/">首页</a>&gt;&gt;搜索 <strong class="red">{page:key}</strong> 的结果共 <strong class="red">{page:datacount}</strong> 条</b><span></span></div>
+        <ul>
+		<li><span>分类:</span>{maccms:menu type=auto}<a href="[menu:link]" {if-A:"{page:id}"="[menu:id]"} class="curr" {endif-A}>[menu:name]</a>{/maccms:menu}</li>
+	  <li><span>地区:</span>{maccms:area type=auto order=asc}<a href="[area:link]" {if-A:"{page:area}"="[area:name]"} class="curr" {endif-A}>[area:name]</a>{/maccms:area}</li>
+		<li><span>年代:</span>{maccms:year type=auto start=1998 end=2014 order=desc}<a href="[year:link]" {if-A:"{page:year}"="[year:name]"} class="curr" {endif-A}>[year:name]</a>{/maccms:year}</li>
+       <li><span>字母:</span>{maccms:letter type=auto letter=all}<p><a href="[letter:link]" {if-A:"{page:letter}"="[letter:name]"} class="now" {endif-A}>[letter:name]</a></p>{/maccms:letter}</li>
+		<li><span>语言:</span>{maccms:lang type=auto}<a href="[lang:link]" {if-A:"{page:lang}"="[lang:name]"} class="now" {endif-A}>[lang:name]</a>{/maccms:lang}</li>
+        </ul>
+        <i class="ib"></i>
+     </div>
+     
+<div class="movielist">
+            	<ul class="img-list clearfix">
+{maccms:vod pagesize=24 order=desc by=time}				
+<li><a class="play-img" href="[vod:link]" target="_blank"><img onerror="this.src='{maccms:path}images/nopic.gif'" src="[vod:pic]" alt="[vod:name]" /><i></i><em>{if-A:[vod:state]<1}[vod:remarks]{elseif-A:[vod:state]<1000 and [vod:state]>0}第[vod:state]集{elseif-A:[vod:state]>1000}[vod:state]期{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}大结局{else-A}{endif-A}</em></a><h5><a href="[vod:link]" target="_blank" title="[vod:name]">[vod:name]</a></h5><p>[vod:starring]</p><p class="star">评分：<em>[vod:score]</em></p></li>{/maccms:vod}				
+</ul>
+	 <div class="page">{maccms:pages len=6}</div>
+            </div>
+           
+        </div>
+<!--/main-->
+<!--版权信息-->
+<div id="footer">
+   <div class="foot">
+   	<p>免责声明:如果侵犯了你的权益，请发邮件至：xunbocc@foxmail.com，我们会及时删除侵权内容，谢谢合作！</p><span><a href="/gbook.asp" target="_blank">求片留言</a> - <a href="/google.xml" target="_blank">Google地图</a> - <a href="/baidu.xml" target="_blank">百度地图</a> - <a href="/rss.xml" target="_blank">RSS订阅</a> - <script language=javascript type=text/javascript src=/ad/tongji.js></script></span>
+   </div>
+</div>
+<div class="back-to-top" id="back-to-top">
+	<a href="javascript:void(0);" target="_self">Back to Top</a>
+</div>
+<script type="text/javascript" src="/js/IE6Top.js"></script>
+</body>
+</html>

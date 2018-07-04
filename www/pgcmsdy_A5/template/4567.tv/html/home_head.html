@@ -1,0 +1,34 @@
+<div id="header">
+	<div class="logo"><a href="http://{maccms:url}" title="首页">首页</a></div>
+	<div class="search">
+		<form name="formsearch" id="formsearch" action='{maccms:link_search_vod}' method="post" target="_blank" onSubmit="return bottomForm();" >
+		<div id="x1" class="sa">
+			<a id="s0">本站</a>
+			<span style="display:none" id="x2" class="lanmu"><a id="s1">百度</a><a id="s2">本站</a></span>
+		</div>
+		<input id="typeid" name="typeid" type="hidden" value="2">
+		<input  class="sb" id="wd" name="wd" onFocus="if(this.value=='请输入关键词'){this.value='';}else{this.select();}this.style.color='black';"  value="请输入关键词" />
+		<input class="sc" name="Input" type="submit" value="搜索">
+		</form>
+	</div>
+ 
+	<div class="history"><a class="gk"  id="history" href="javascript:void(0);" >观看记录</a>
+	</div>
+	<p class="plus"><a href="{maccms:getlink hot.html}" class="ph">排行榜</a><a href="{maccms:getlink new.html}" class="dq">最近更新</a></p>
+	<div id="menu">
+		<div class="m">
+			<p><a href="{maccms:path}" class="home">首页</a>
+{maccms:menu type=1,2,3,4}<a href="[menu:link]" {if-A:[menu:id]={maccms:curvodtypeid}} class="menu15" {endif-A} title="[menu:name]">[menu:name]</a>{/maccms:menu}
+</p>
+<span>
+<a href="javascript:" onClick="jscript:window.external.AddFavorite(document.location.href,document.title);" title="添加到我的IE收藏夹">加入收藏</a>
+<a href="{maccms:link_gbook}" target="_blank">求片留言</a>
+<a id="login" href="{maccms:path}index.php?m=user-index.html" class="mybox">用户中心</a>
+</span>
+		</div>
+		<p class="s">
+热门分类：{maccms:menu parent=1,2,3,4}<a href="[menu:link]" title="[menu:name]">[menu:name]</a>{/maccms:menu}
+		</p>
+	</div>
+	</div>
+<!--/header-->

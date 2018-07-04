@@ -1,0 +1,6 @@
+
+新片预告 为后台推荐 1---5
+
+vod_typedy.html
+vod_typetv.html    分别在后台分类里修改 
+
